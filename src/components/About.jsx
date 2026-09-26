@@ -71,7 +71,7 @@ export default function About() {
               </div>
 
               <p className="text-slate-300 text-base leading-relaxed mb-6">
-                I am a dedicated Computer Science & Engineering (Artificial Intelligence) undergraduate currently maintaining an <b className="text-cyan-300 font-semibold">8.4 / 10 CGPA</b>. My core drive is turning theoretical AI research into deployable, robust software products.
+                I am a dedicated Computer Science & Engineering (Artificial Intelligence) undergraduate currently maintaining an <b className="text-cyan-300 font-semibold">8.6 / 10 CGPA</b>. My core drive is turning theoretical AI research into deployable, robust software products.
               </p>
 
               <p className="text-slate-300 text-base leading-relaxed mb-6">
@@ -86,7 +86,7 @@ export default function About() {
                 </div>
                 <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left">
                   <span className="text-[11px] font-mono text-cyan-400 block">CGPA</span>
-                  <span className="text-xs font-semibold text-slate-200">8.4 / 10.0</span>
+                  <span className="text-xs font-semibold text-slate-200">8.6 / 10.0</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-left col-span-2 sm:col-span-1">
                   <span className="text-[11px] font-mono text-cyan-400 block">Location</span>

@@ -1,6 +1,6 @@
 # Kubendiran M — Personal Developer Portfolio 🚀
 
-A modern, high-performance, visually striking personal portfolio website for **Kubendiran M**, Computer Science (AI) Undergraduate at **Sathyabama Institute of Science & Technology** (CGPA: 8.4/10).
+A modern, high-performance, visually striking personal portfolio website for **Kubendiran M**, Computer Science (AI) Undergraduate at **Sathyabama Institute of Science & Technology** (CGPA: 8.6/10).
 
 Designed with a sleek dark aesthetic accented by electric cyan and teal glow, smooth scroll-triggered micro-interactions, responsive glassmorphism, interactive neural particle background, and comprehensive project case study modals.
 
@@ -12,7 +12,7 @@ Designed with a sleek dark aesthetic accented by electric cyan and teal glow, sm
   - Animated typing effect cycling through *AI Engineer*, *Full-Stack Developer*, *Computer Vision Enthusiast*, and *Machine Learning Explorer*.
   - Real-time status indicator: `● Available for Software Development & AI Roles`.
   - Floating tech stack badges (`Python & OpenCV`, `React & Supabase`).
-  - High-impact statistics banner (8.4 CGPA, 5+ Core Projects, 1 Internship, 2 Certifications).
+  - High-impact statistics banner (8.6 CGPA, 5+ Core Projects, 1 Internship, 2 Certifications).
 - **Interactive Neural Particle Background**: HTML5 canvas rendering constellation nodes that gently react to mouse movement.
 - **Custom Electric Glow Cursor**: Smooth dual-ring cursor with hover-expansion physics (automatically disabled on touch devices).
 - **About Me**: Academic foundations at Sathyabama, multilingual competencies (English, Tamil, Telugu), and animated soft skills cards (Problem Solving, Communication, Leadership, Time Management, Critical Thinking, Team Collaboration).

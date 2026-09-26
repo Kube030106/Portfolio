@@ -29,9 +29,9 @@ export default function Footer() {
           {/* Left: Brand & Tagline */}
           <div className="md:col-span-6 space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-teal-400 p-[1px]">
-                <div className="w-full h-full bg-[#030712] rounded-[7px] flex items-center justify-center">
-                  <span className="font-mono font-bold text-xs text-cyan-400">KM</span>
+              <div className="px-2 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-teal-400 p-[1px] flex items-center justify-center">
+                <div className="w-full h-full bg-[#030712] rounded-[7px] px-1.5 flex items-center justify-center">
+                  <span className="font-mono font-bold text-xs text-cyan-400 lowercase">kubz</span>
                 </div>
               </div>
               <span className="text-base font-bold text-white font-heading">

@@ -11,10 +11,12 @@
     scroll-behavior: smooth;
     font-family: var(--font-sans);
     color-scheme: dark;
+    overflow-x: hidden;
   }
 
   body {
     overflow-x: hidden;
+    overflow-y: auto;
     background-color: #030712;
     color: #f8fafc;
     transition: background-color 0.3s ease, color 0.3s ease;

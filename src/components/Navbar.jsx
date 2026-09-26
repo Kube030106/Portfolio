@@ -59,10 +59,10 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenResume
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center space-x-2.5 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-teal-400 p-[1px] shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.7)] transition-all">
-              <div className="w-full h-full bg-[#030712] rounded-[11px] flex items-center justify-center">
-                <span className="font-mono font-bold text-sm text-cyan-400 tracking-tighter">
-                  KM<span className="text-teal-400">.</span>
+            <div className="px-2.5 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-teal-400 p-[1px] shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.7)] transition-all flex items-center justify-center">
+              <div className="w-full h-full bg-[#030712] rounded-[11px] px-2 flex items-center justify-center">
+                <span className="font-mono font-bold text-xs sm:text-sm text-cyan-400 tracking-tight lowercase">
+                  kubz<span className="text-teal-400">.</span>
                 </span>
               </div>
             </div>
@@ -70,8 +70,8 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenResume
               <span className="font-semibold text-slate-100 dark:text-slate-100 text-sm tracking-wide group-hover:text-cyan-400 transition-colors">
                 Kubendiran M
               </span>
-              <span className="text-[10px] font-mono text-cyan-400/80 -mt-0.5">
-                AI &bull; Full-Stack Dev
+              <span className="text-[10px] font-mono text-cyan-400/90 -mt-0.5">
+                Software &amp; AI &bull; Full-Stack Dev
               </span>
             </div>
           </a>

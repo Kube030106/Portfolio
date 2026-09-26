@@ -52,7 +52,7 @@ export default function SplashScreen({ onFinish }) {
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-cyan-400 animate-ping" />
               <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase font-semibold">
-                Kubendiran.ai // Bootloader
+                kubz.ai // Bootloader
               </span>
             </div>
             <Cpu className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '6s' }} />
@@ -60,9 +60,9 @@ export default function SplashScreen({ onFinish }) {
 
           {/* Central Logo / Initials */}
           <div className="flex flex-col items-center my-6">
-            <div className="relative flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-tr from-cyan-600/20 to-teal-400/20 border border-cyan-400/40 shadow-[0_0_25px_rgba(6,182,212,0.3)] mb-4">
+            <div className="relative flex items-center justify-center w-24 h-20 rounded-2xl bg-gradient-to-tr from-cyan-600/20 to-teal-400/20 border border-cyan-400/40 shadow-[0_0_25px_rgba(6,182,212,0.3)] mb-4">
               <span className="text-2xl font-bold font-mono tracking-tighter text-cyan-300">
-                KM<span className="text-teal-400">.ai</span>
+                kubz<span className="text-teal-400">.ai</span>
               </span>
               <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-cyan-400 flex items-center justify-center">
                 <Sparkles className="w-2.5 h-2.5 text-black" />

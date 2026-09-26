@@ -26,7 +26,7 @@ export default function ResumeModal({ isOpen, onClose }) {
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -115,7 +115,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Professional Summary
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology with an 8.4/10 CGPA. Experienced in developing computer vision systems (ArcFace, OpenCV), full-stack web applications (React, Supabase, Flask), and machine learning pipelines. Seeking high-impact software engineering opportunities.
+                Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology with an 8.6/10 CGPA. Experienced in developing computer vision systems (ArcFace, OpenCV), full-stack web applications (React, Supabase, Flask), and machine learning pipelines. Seeking high-impact software engineering opportunities.
               </p>
             </div>
 

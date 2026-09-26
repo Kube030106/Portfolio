@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
     "Computer Vision Enthusiast",
     "Machine Learning Explorer"
   ],
-  bio: "Passionate Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology (2023–2027) with a CGPA of 8.4/10. I specialize in architecting intelligent full-stack applications, robust biometric computer vision systems, and edge IoT solutions that bridge the gap between artificial intelligence and real-world utility.",
+  bio: "Passionate Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology (2023–2027) with a CGPA of 8.6/10. I specialize in architecting intelligent full-stack applications, robust biometric computer vision systems, and edge IoT solutions that bridge the gap between artificial intelligence and real-world utility.",
   email: "kuben3456@gmail.com",
   phone: "+91-9344715210",
   location: "Chennai, Tamil Nadu, India",
@@ -17,7 +17,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://linkedin.com/in/m-kubendiran-2546702b5",
   resumeUrl: "/resume.pdf",
   stats: [
-    { label: "Academic CGPA", value: "8.4 / 10", description: "Sathyabama Institute of Tech" },
+    { label: "Academic CGPA", value: "8.6 / 10", description: "Sathyabama Institute of Tech" },
     { label: "Core Projects", value: "5+", description: "AI, Full-Stack & IoT Systems" },
     { label: "Industry Experience", value: "1", description: "Software Dev Internship" },
     { label: "Certifications", value: "2", description: "NPTEL & HCL GUVI Verified" }
@@ -44,7 +44,7 @@ export const EDUCATION = [
     location: "Chennai, India",
     type: "Full-Time",
     period: "2023 – 2027 (Expected)",
-    score: "CGPA: 8.4 / 10",
+    score: "CGPA: 8.6 / 10",
     badge: "Current Degree",
     description: "Specialized undergraduate program focusing on modern artificial intelligence, deep learning architectures, computer vision, and scalable software engineering.",
     courses: [
@@ -56,7 +56,7 @@ export const EDUCATION = [
       "Computer Networks & Protocols"
     ],
     highlights: [
-      "Maintained top-percentile academic standing with consistent 8.4 CGPA",
+      "Maintained top-percentile academic standing with consistent 8.6 CGPA",
       "Active participant in technical symposiums and AI workshops",
       "Led student project initiatives in computer vision & edge computing"
     ]

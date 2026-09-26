@@ -172,10 +172,12 @@ export default function Projects() {
         </motion.div>
 
         {/* Project Details Modal */}
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
 
       </div>
     </section>

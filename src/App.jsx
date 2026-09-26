@@ -118,10 +118,12 @@ export default function App() {
       <Footer />
 
       {/* Resume Viewer & Download Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
+      {isResumeOpen && (
+        <ResumeModal
+          isOpen={isResumeOpen}
+          onClose={() => setIsResumeOpen(false)}
+        />
+      )}
     </div>
   );
 }

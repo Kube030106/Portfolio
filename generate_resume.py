@@ -130,7 +130,7 @@ def create_resume(output_path):
     # Education
     story.append(Paragraph("EDUCATION", section_head_style))
     story.append(Paragraph("<b>B.E. Computer Science & Engineering (Artificial Intelligence)</b>", item_title_style))
-    story.append(Paragraph("Sathyabama Institute of Science & Technology, Chennai | <i>2023 &ndash; 2027 (Expected)</i> | <b>CGPA: 8.4 / 10.0</b>", subtext_style))
+    story.append(Paragraph("Sathyabama Institute of Science & Technology, Chennai | <i>2023 &ndash; 2027 (Expected)</i> | <b>CGPA: 8.6 / 10.0</b>", subtext_style))
     story.append(Paragraph("&bull; Core Coursework: Data Structures & Algorithms, Object-Oriented Programming, Machine Learning, Computer Vision, Database Management Systems, Operating Systems, Computer Networks.", bullet_style))
     story.append(Spacer(1, 3))
     

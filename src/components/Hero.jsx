@@ -202,12 +202,12 @@ export default function Hero({ onOpenResume }) {
                   <div className="flex items-center space-x-2">
                     <Brain className="w-4 h-4 text-cyan-400 animate-pulse" />
                     <div>
-                      <p className="text-[11px] font-mono text-cyan-300 font-bold leading-none">ArcFace & AI Stack</p>
-                      <p className="text-[9px] text-slate-400 font-mono">B.E. CSE (AI) 2023-27</p>
+                      <p className="text-[11px] font-mono text-cyan-300 font-bold leading-none">Software &amp; AI Engineer</p>
+                      <p className="text-[9px] text-slate-400 font-mono">ArcFace &bull; Full-Stack &bull; 2023-27</p>
                     </div>
                   </div>
                   <div className="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-bold">
-                    8.4 CGPA
+                    8.6 CGPA
                   </div>
                 </div>
               </div>
