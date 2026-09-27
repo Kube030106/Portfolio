@@ -148,9 +148,9 @@ def create_resume(output_path):
         [Paragraph("<b>Programming Languages:</b>", bullet_style), Paragraph("Python, Java, C, SQL", body_style)],
         [Paragraph("<b>Web & Frontend:</b>", bullet_style), Paragraph("ReactJS, REST APIs", body_style)],
         [Paragraph("<b>Databases & Cloud:</b>", bullet_style), Paragraph("PostgreSQL, Supabase", body_style)],
-        [Paragraph("<b>Libraries & Frameworks:</b>", bullet_style), Paragraph("OpenCV, DeepFace / ArcFace, Plotly", body_style)],
+        [Paragraph("<b>Libraries & Frameworks:</b>", bullet_style), Paragraph("OpenCV, Computer Vision", body_style)],
         [Paragraph("<b>Tools & Systems:</b>", bullet_style), Paragraph("Git, GitHub, VS Code, Arduino IDE", body_style)],
-        [Paragraph("<b>Core Concepts:</b>", bullet_style), Paragraph("Data Structures & Algorithms, OOP, DBMS, OS, Computer Networks, ML, Computer Vision, IoT", body_style)],
+        [Paragraph("<b>Core Concepts:</b>", bullet_style), Paragraph("Data Structures & Algorithms, OOP, OS, Computer Networks, ML, Computer Vision, IoT", body_style)],
         [Paragraph("<b>Soft Skills:</b>", bullet_style), Paragraph("Problem Solving, Communication, Leadership, Time Management, Agile Collaboration", body_style)],
         [Paragraph("<b>Languages Known:</b>", bullet_style), Paragraph("English (Professional), Tamil (Native), Telugu (Conversational Speaking)", body_style)]
     ]

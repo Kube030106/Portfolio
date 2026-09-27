@@ -130,14 +130,11 @@ export const SKILLS = [
 
   // AI & Data Libraries
   { name: "OpenCV", category: "ai-data", level: 90, icon: "Eye", popular: true, tag: "Computer Vision" },
-  { name: "DeepFace / ArcFace", category: "ai-data", level: 86, icon: "ScanFace", popular: true, tag: "Biometric AI" },
-  { name: "Plotly", category: "ai-data", level: 84, icon: "BarChart3", popular: false, tag: "Interactive Dashboards" },
   { name: "Git & GitHub", category: "ai-data", level: 90, icon: "GitBranch", popular: true, tag: "Version Control" },
 
   // Core CS & Hardware
   { name: "Data Structures & Algorithms", category: "core-cs", level: 86, icon: "Workflow", popular: true, tag: "Problem Solving" },
   { name: "Object-Oriented Programming (OOP)", category: "core-cs", level: 88, icon: "Boxes", popular: false, tag: "Architecture" },
-  { name: "DBMS Internals", category: "core-cs", level: 88, icon: "HardDrive", popular: false, tag: "ACID & Indexing" },
   { name: "Operating Systems", category: "core-cs", level: 82, icon: "Terminal", popular: false, tag: "Processes & Threads" },
   { name: "Computer Networks", category: "core-cs", level: 80, icon: "Wifi", popular: false, tag: "TCP/IP & Sockets" },
   { name: "Machine Learning & DL", category: "core-cs", level: 88, icon: "BrainCircuit", popular: true, tag: "Neural Networks" },
