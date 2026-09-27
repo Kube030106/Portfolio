@@ -146,9 +146,9 @@ def create_resume(output_path):
     story.append(Paragraph("TECHNICAL & CORE SKILLS", section_head_style))
     skills_data = [
         [Paragraph("<b>Programming Languages:</b>", bullet_style), Paragraph("Python, Java, C, SQL", body_style)],
-        [Paragraph("<b>Web & Frontend:</b>", bullet_style), Paragraph("ReactJS, HTML5, CSS3, Tailwind CSS, Flask, REST APIs", body_style)],
+        [Paragraph("<b>Web & Frontend:</b>", bullet_style), Paragraph("ReactJS, REST APIs", body_style)],
         [Paragraph("<b>Databases & Cloud:</b>", bullet_style), Paragraph("PostgreSQL, Supabase", body_style)],
-        [Paragraph("<b>Libraries & Frameworks:</b>", bullet_style), Paragraph("OpenCV, DeepFace, Plotly, NumPy, Pandas, Scikit-learn", body_style)],
+        [Paragraph("<b>Libraries & Frameworks:</b>", bullet_style), Paragraph("OpenCV, DeepFace / ArcFace, Plotly", body_style)],
         [Paragraph("<b>Tools & Systems:</b>", bullet_style), Paragraph("Git, GitHub, VS Code, Arduino IDE", body_style)],
         [Paragraph("<b>Core Concepts:</b>", bullet_style), Paragraph("Data Structures & Algorithms, OOP, DBMS, OS, Computer Networks, ML, Computer Vision, IoT", body_style)],
         [Paragraph("<b>Soft Skills:</b>", bullet_style), Paragraph("Problem Solving, Communication, Leadership, Time Management, Agile Collaboration", body_style)],

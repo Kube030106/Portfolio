@@ -123,10 +123,6 @@ export const SKILLS = [
 
   // Web & Frontend
   { name: "ReactJS", category: "web", level: 88, icon: "Code", popular: true, tag: "SPA / Modern Web" },
-  { name: "HTML5", category: "web", level: 95, icon: "Layout", popular: false, tag: "Semantic Markup" },
-  { name: "CSS3", category: "web", level: 90, icon: "Palette", popular: false, tag: "Flexbox / Grid / Anim" },
-  { name: "Tailwind CSS", category: "web", level: 92, icon: "Sparkles", popular: true, tag: "Modern Styling" },
-  { name: "Flask", category: "web", level: 85, icon: "Server", popular: true, tag: "Python REST APIs" },
 
   // Databases & Cloud
   { name: "Supabase", category: "database-cloud", level: 85, icon: "Cloud", popular: true, tag: "Postgres BaaS / Auth" },
@@ -136,9 +132,6 @@ export const SKILLS = [
   { name: "OpenCV", category: "ai-data", level: 90, icon: "Eye", popular: true, tag: "Computer Vision" },
   { name: "DeepFace / ArcFace", category: "ai-data", level: 86, icon: "ScanFace", popular: true, tag: "Biometric AI" },
   { name: "Plotly", category: "ai-data", level: 84, icon: "BarChart3", popular: false, tag: "Interactive Dashboards" },
-  { name: "NumPy", category: "ai-data", level: 88, icon: "Binary", popular: false, tag: "Vector Math" },
-  { name: "Pandas", category: "ai-data", level: 87, icon: "TableProperties", popular: false, tag: "Data Wrangling" },
-  { name: "Scikit-learn", category: "ai-data", level: 85, icon: "Network", popular: true, tag: "Classical ML Models" },
   { name: "Git & GitHub", category: "ai-data", level: 90, icon: "GitBranch", popular: true, tag: "Version Control" },
 
   // Core CS & Hardware
