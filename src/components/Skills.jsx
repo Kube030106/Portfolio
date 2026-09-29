@@ -27,7 +27,7 @@ import {
   Camera,
   Radio,
   Search,
-  CheckCircle2
+  Layers
 } from 'lucide-react';
 import { SKILLS, SKILL_CATEGORIES } from '../data/portfolioData';
 
@@ -57,7 +57,8 @@ const iconMap = {
   Wifi,
   BrainCircuit,
   Camera,
-  Radio
+  Radio,
+  Layers
 };
 
 export default function Skills() {

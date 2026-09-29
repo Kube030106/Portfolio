@@ -30,12 +30,12 @@ Designed with a sleek dark aesthetic accented by electric cyan and teal glow, sm
     4. **Startup Unicorn Prediction System** – Supervised ML valuation model
     5. **Weather Sync** – IoT Environmental Monitoring System with Arduino & DHT22
 - **Internship Experience**: Software Developer Intern at **Rudhra Info Solutions**, Chennai.
-- **Certifications**: NPTEL DBMS (Elite) and HCL GUVI JavaScript credentials.
+- **Certifications**: ServiceNow Certified Application Developer (CAD), ServiceNow Certified System Administrator (CSA), NPTEL DBMS (Elite), and HCL GUVI JavaScript credentials.
 - **Interactive Transmission / Contact Channel**:
   - Validated contact form with confetti celebration animation (`canvas-confetti`) and `mailto:` fallback.
   - Direct 1-click clipboard copy for Email (`kuben3456@gmail.com`) and Phone (`+91-9344715210`).
 - **Interactive Resume Modal & PDF Download**:
-  - In-browser modal viewer + ATS-ready downloadable vector `resume.pdf` in `/public`.
+  - In-browser modal viewer + ATS-ready single-page downloadable vector `resume.pdf` in `/public` generated via `python generate_resume.py`.
 - **Dark & Light Mode Toggle**: Dark theme default with seamless transition to a light mode.
 
 ---

@@ -6,71 +6,75 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 def create_resume(output_path):
+    margin = 26
     doc = SimpleDocTemplate(
         output_path,
         pagesize=letter,
-        rightMargin=0.5 * inch,
-        leftMargin=0.5 * inch,
-        topMargin=0.4 * inch,
-        bottomMargin=0.4 * inch
+        rightMargin=margin,
+        leftMargin=margin,
+        topMargin=margin,
+        bottomMargin=margin
     )
 
     styles = getSampleStyleSheet()
     
-    # Custom styles
+    # Custom color palette
     primary_color = colors.HexColor("#0891b2") # Cyan 600
     dark_text = colors.HexColor("#0f172a") # Slate 900
     gray_text = colors.HexColor("#475569") # Slate 600
-    accent_bar = colors.HexColor("#06b6d4")
+    accent_bar = colors.HexColor("#06b6d4") # Cyan 500
+    light_cyan = colors.HexColor("#ecfeff") # Cyan 50
+    border_cyan = colors.HexColor("#0891b2") # Cyan 600
+    divider_gray = colors.HexColor("#cbd5e1") # Slate 300
     
     name_style = ParagraphStyle(
         'NameStyle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=22,
-        leading=26,
+        fontSize=20,
+        leading=23,
         textColor=dark_text,
         alignment=0,
-        spaceAfter=2
+        spaceAfter=1
     )
     
     title_style = ParagraphStyle(
         'TitleStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=14,
+        fontSize=9.5,
+        leading=12.5,
         textColor=primary_color,
-        spaceAfter=4
+        spaceAfter=2
     )
     
     contact_style = ParagraphStyle(
         'ContactStyle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=13,
+        fontSize=8.2,
+        leading=10.5,
         textColor=gray_text,
-        spaceAfter=8
+        spaceAfter=3
     )
     
     section_head_style = ParagraphStyle(
         'SectionHead',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=15,
+        fontSize=9.8,
+        leading=12,
         textColor=primary_color,
-        spaceBefore=8,
-        spaceAfter=3
+        spaceBefore=4,
+        spaceAfter=2
     )
     
     item_title_style = ParagraphStyle(
         'ItemTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=13,
+        fontSize=8.6,
+        leading=11,
         textColor=dark_text
     )
     
@@ -78,8 +82,8 @@ def create_resume(output_path):
         'SubText',
         parent=styles['Normal'],
         fontName='Helvetica-Oblique',
-        fontSize=9,
-        leading=12,
+        fontSize=8,
+        leading=10,
         textColor=gray_text
     )
     
@@ -87,127 +91,140 @@ def create_resume(output_path):
         'Body',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=12.5,
+        fontSize=8.2,
+        leading=10.5,
         textColor=dark_text,
-        spaceAfter=4
+        spaceAfter=2
     )
     
     bullet_style = ParagraphStyle(
         'Bullet',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8.8,
-        leading=12,
+        fontSize=8,
+        leading=10.2,
         textColor=dark_text,
-        leftIndent=12,
-        spaceAfter=2
+        leftIndent=8,
+        spaceAfter=1
+    )
+    
+    spotlight_style = ParagraphStyle(
+        'Spotlight',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=8.2,
+        leading=10.8,
+        textColor=dark_text
     )
 
     story = []
 
-    # Header
+    # 1. Header
     story.append(Paragraph("KUBENDIRAN M", name_style))
-    story.append(Paragraph("Computer Science (AI) Undergraduate | Aspiring Software Developer & AI Engineer", title_style))
+    story.append(Paragraph(
+        "Computer Science (AI) Undergraduate | ServiceNow Certified (CAD &amp; CSA) | Software Developer",
+        title_style
+    ))
     contact_info = (
-        "Chennai, India &bull; Phone: +91-9344715210 &bull; Email: kuben3456@gmail.com<br/>"
+        "Chennai, India &bull; Phone: +91-9344715210 &bull; Email: kuben3456@gmail.com &bull; "
         "LinkedIn: linkedin.com/in/m-kubendiran-2546702b5 &bull; GitHub: github.com/Kube030106"
     )
     story.append(Paragraph(contact_info, contact_style))
-    story.append(HRFlowable(width="100%", thickness=1.5, color=accent_bar, spaceBefore=2, spaceAfter=8))
+    story.append(HRFlowable(width="100%", thickness=1.2, color=accent_bar, spaceBefore=1, spaceAfter=3))
 
-    # Professional Summary
+    # 2. Featured ServiceNow Credentials Callout Box
+    usable_width = letter[0] - 2 * margin
+    box_content = Paragraph(
+        "<b><font color='#0891b2'>FEATURED INDUSTRY CREDENTIALS &mdash; SERVICENOW CERTIFIED:</font></b><br/>"
+        "&bull; <b>ServiceNow Certified Application Developer (CAD)</b> &ndash; Scoped Applications, Client/Server Scripting, Flow Designer, REST Integrations.<br/>"
+        "&bull; <b>ServiceNow Certified System Administrator (CSA)</b> &ndash; Platform Configuration, User/Role Governance, Service Catalog, CMDB, Workflows.",
+        spotlight_style
+    )
+    box_table = Table([[box_content]], colWidths=[usable_width])
+    box_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), light_cyan),
+        ('BOX', (0,0), (-1,-1), 1, border_cyan),
+        ('TOPPADDING', (0,0), (-1,-1), 3.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 3.5),
+        ('LEFTPADDING', (0,0), (-1,-1), 6),
+        ('RIGHTPADDING', (0,0), (-1,-1), 6),
+    ]))
+    story.append(box_table)
+    story.append(Spacer(1, 1.5))
+
+    # 3. Professional Summary
     story.append(Paragraph("PROFESSIONAL SUMMARY", section_head_style))
     summary_text = (
-        "Motivated Computer Science (Artificial Intelligence) undergraduate with a strong foundation in full-stack web development, "
-        "computer vision, and machine learning. Demonstrated success in architecting interactive AI applications, real-time facial "
-        "recognition systems, and IoT sensor solutions. Seeking an entry-level Software Developer or AI Engineering role to create "
-        "impactful, high-performance technology products."
+        "Motivated Computer Science (AI) undergraduate and ServiceNow Certified Developer &amp; Administrator (CAD, CSA) "
+        "with strong expertise in enterprise platform development, full-stack web applications, and computer vision systems. "
+        "Demonstrated success in architecting biometric facial recognition pipelines, natural language query translation engines, "
+        "and automated enterprise workflows. Seeking high-impact software engineering or ServiceNow development roles."
     )
     story.append(Paragraph(summary_text, body_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceBefore=4, spaceAfter=6))
+    story.append(HRFlowable(width="100%", thickness=0.4, color=divider_gray, spaceBefore=1.5, spaceAfter=2))
 
-    # Education
-    story.append(Paragraph("EDUCATION", section_head_style))
-    story.append(Paragraph("<b>B.E. Computer Science & Engineering (Artificial Intelligence)</b>", item_title_style))
-    story.append(Paragraph("Sathyabama Institute of Science & Technology, Chennai | <i>2023 &ndash; 2027 (Expected)</i> | <b>CGPA: 8.6 / 10.0</b>", subtext_style))
-    story.append(Paragraph("&bull; Core Coursework: Data Structures & Algorithms, Object-Oriented Programming, Machine Learning, Computer Vision, Database Management Systems, Operating Systems, Computer Networks.", bullet_style))
-    story.append(Spacer(1, 3))
-    
-    story.append(Paragraph("<b>Higher Secondary Certificate (12th Grade)</b>", item_title_style))
-    story.append(Paragraph("Aditya Vidyashram | <i>2023</i> | <b>Score: 73%</b>", subtext_style))
-    story.append(Spacer(1, 3))
-    
-    story.append(Paragraph("<b>Secondary School Certificate (10th Grade)</b>", item_title_style))
-    story.append(Paragraph("Aditya Vidyashram | <i>2021</i> | <b>Score: 86%</b>", subtext_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceBefore=4, spaceAfter=6))
-
-    # Technical Skills
-    story.append(Paragraph("TECHNICAL & CORE SKILLS", section_head_style))
+    # 4. Technical Skills
+    story.append(Paragraph("TECHNICAL &amp; CORE SKILLS", section_head_style))
     skills_data = [
-        [Paragraph("<b>Programming Languages:</b>", bullet_style), Paragraph("Python, Java, C, SQL", body_style)],
-        [Paragraph("<b>Web & Frontend:</b>", bullet_style), Paragraph("ReactJS, REST APIs", body_style)],
-        [Paragraph("<b>Databases & Cloud:</b>", bullet_style), Paragraph("PostgreSQL, Supabase", body_style)],
-        [Paragraph("<b>Libraries & Frameworks:</b>", bullet_style), Paragraph("OpenCV, Computer Vision", body_style)],
-        [Paragraph("<b>Tools & Systems:</b>", bullet_style), Paragraph("Git, GitHub, VS Code, Arduino IDE", body_style)],
-        [Paragraph("<b>Core Concepts:</b>", bullet_style), Paragraph("Data Structures & Algorithms, OOP, OS, Computer Networks, ML, Computer Vision, IoT", body_style)],
-        [Paragraph("<b>Soft Skills:</b>", bullet_style), Paragraph("Problem Solving, Communication, Leadership, Time Management, Agile Collaboration", body_style)],
-        [Paragraph("<b>Languages Known:</b>", bullet_style), Paragraph("English (Professional), Tamil (Native), Telugu (Conversational Speaking)", body_style)]
+        [Paragraph("<b>ServiceNow Platform:</b>", bullet_style), Paragraph("<b>ServiceNow CAD &amp; CSA Certified</b>, Scoped Applications, Flow Designer, Business Rules, Client Scripts, Script Includes, UI Policies &amp; Actions, Service Catalog, CMDB, REST APIs", body_style)],
+        [Paragraph("<b>Programming Languages:</b>", bullet_style), Paragraph("Python, Java, C, SQL, JavaScript (Modern ES6+)", body_style)],
+        [Paragraph("<b>Web &amp; Frameworks:</b>", bullet_style), Paragraph("ReactJS, Flask, REST APIs, HTML5, CSS3, Tailwind CSS", body_style)],
+        [Paragraph("<b>Databases &amp; Cloud:</b>", bullet_style), Paragraph("PostgreSQL, Supabase, Relational Modeling, ACID Transactions, Indexing", body_style)],
+        [Paragraph("<b>AI &amp; Libraries:</b>", bullet_style), Paragraph("OpenCV, DeepFace (ArcFace), Scikit-learn, Pandas, NumPy, Computer Vision", body_style)],
+        [Paragraph("<b>Developer Tools:</b>", bullet_style), Paragraph("Git, GitHub, VS Code, Postman, Linux, Arduino IDE", body_style)]
     ]
-    t = Table(skills_data, colWidths=[1.8 * inch, 5.7 * inch])
-    t.setStyle(TableStyle([
+    skills_table = Table(skills_data, colWidths=[1.45 * inch, usable_width - 1.45 * inch])
+    skills_table.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'TOP'),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1),
-        ('TOPPADDING', (0,0), (-1,-1), 1),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 0.8),
+        ('TOPPADDING', (0,0), (-1,-1), 0.8),
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
     ]))
-    story.append(t)
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceBefore=4, spaceAfter=6))
+    story.append(skills_table)
+    story.append(HRFlowable(width="100%", thickness=0.4, color=divider_gray, spaceBefore=1.5, spaceAfter=2))
 
-    # Experience
+    # 5. Experience
     story.append(Paragraph("EXPERIENCE", section_head_style))
-    story.append(Paragraph("<b>Software Developer Intern</b> &mdash; Rudhra Info Solutions, Chennai", item_title_style))
-    story.append(Paragraph("<i>Duration: 1 Month | Full-Stack & Python Web Development</i>", subtext_style))
+    story.append(Paragraph("<b>Software Developer Intern</b> &mdash; Rudhra Info Solutions, Chennai | <i>1 Month (Full-Stack &amp; Python)</i>", item_title_style))
     story.append(Paragraph("&bull; Developed responsive front-end user interfaces using HTML5, CSS3, and JavaScript, ensuring seamless cross-browser compatibility.", bullet_style))
-    story.append(Paragraph("&bull; Integrated Python-backed business logic and executed rigorous debugging to resolve UI/UX and functional bugs.", bullet_style))
-    story.append(Paragraph("&bull; Maintained disciplined version control workflows utilizing Git and GitHub for feature branch staging and peer code reviews.", bullet_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceBefore=4, spaceAfter=6))
+    story.append(Paragraph("&bull; Integrated Python backend logic and executed rigorous debugging to resolve UI/UX and functional defects.", bullet_style))
+    story.append(Paragraph("&bull; Maintained disciplined version control workflows using Git and GitHub for feature branch staging and peer code reviews.", bullet_style))
+    story.append(HRFlowable(width="100%", thickness=0.4, color=divider_gray, spaceBefore=1.5, spaceAfter=2))
 
-    # Projects
+    # 6. Projects
     story.append(Paragraph("KEY PROJECTS", section_head_style))
-    
-    # Project 1
-    story.append(Paragraph("<b>DataTalk &ndash; Natural Language Text-to-SQL & Dynamic Visualization</b> | <i>ReactJS, Plotly, Supabase, Tailwind CSS</i>", item_title_style))
-    story.append(Paragraph("&bull; Built an intuitive interface translating plain-English business queries into executable PostgreSQL commands.", bullet_style))
-    story.append(Paragraph("&bull; Engineered automated dynamic data visualizer rendering real-time Plotly charts and exportable analytical summaries.", bullet_style))
-    story.append(Spacer(1, 2))
+    projs = [
+        ("<b>DataTalk &ndash; Natural Language Text-to-SQL &amp; Dynamic Visualization</b> | <i>ReactJS, Plotly, Supabase, Python</i>",
+         "&bull; Engineered natural language translation engine converting plain English queries to executable PostgreSQL with real-time Plotly charts."),
+        ("<b>Student Identification System using ArcFace</b> | <i>Python, OpenCV, DeepFace (ArcFace), Flask</i>",
+         "&bull; Developed biometric facial identification platform with ArcFace angular margin loss, achieving 99.4% accuracy and sub-50ms latency."),
+        ("<b>Real-Time Face Recognition Web System</b> | <i>Python, OpenCV, Flask</i>",
+         "&bull; Designed multi-threaded video surveillance dashboard with automated face registration, feature extraction, and real-time logging."),
+        ("<b>Startup Unicorn Prediction System</b> | <i>Python, Scikit-learn, Pandas, NumPy</i>",
+         "&bull; Trained machine learning classifier predicting unicorn valuation trajectory from venture funding rounds and market dynamics (0.94 ROC-AUC)."),
+        ("<b>Weather Sync &ndash; IoT Environmental Monitoring System</b> | <i>Arduino, C++, DHT22 Sensors</i>",
+         "&bull; Fabricated embedded hardware station recording real-time temperature/humidity with automated LED alert triggers and serial telemetry.")
+    ]
+    for p_title, p_bullet in projs:
+        story.append(Paragraph(p_title, item_title_style))
+        story.append(Paragraph(p_bullet, bullet_style))
+        story.append(Spacer(1, 0.8))
+    story.append(HRFlowable(width="100%", thickness=0.4, color=divider_gray, spaceBefore=1.5, spaceAfter=2))
 
-    # Project 2
-    story.append(Paragraph("<b>Student Identification System using ArcFace</b> | <i>Python, OpenCV, DeepFace (ArcFace), Flask</i>", item_title_style))
-    story.append(Paragraph("&bull; Developed high-precision facial recognition pipeline using additive angular margin loss (ArcFace) for biometric student ID.", bullet_style))
-    story.append(Paragraph("&bull; Achieved rapid sub-second verification latency and resilient matching across varying lighting angles and poses.", bullet_style))
-    story.append(Spacer(1, 2))
-
-    # Project 3
-    story.append(Paragraph("<b>Real-Time Face Recognition Web System</b> | <i>Python, OpenCV, Flask</i>", item_title_style))
-    story.append(Paragraph("&bull; Designed multi-threaded real-time video surveillance dashboard with automated face registration, feature extraction, and logging.", bullet_style))
-    story.append(Spacer(1, 2))
-
-    # Project 4
-    story.append(Paragraph("<b>Startup Unicorn Prediction System</b> | <i>Python, Pandas, NumPy, Scikit-learn</i>", item_title_style))
-    story.append(Paragraph("&bull; Trained supervised machine learning classifier evaluating venture funding rounds, market size, and momentum indicators.", bullet_style))
-    story.append(Spacer(1, 2))
-
-    # Project 5
-    story.append(Paragraph("<b>Weather Sync &ndash; IoT Environmental Monitoring System</b> | <i>Arduino, C++, DHT22, Sensors</i>", item_title_style))
-    story.append(Paragraph("&bull; Fabricated embedded hardware station recording real-time ambient temperature and humidity with automated LED alert triggers.", bullet_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceBefore=4, spaceAfter=6))
-
-    # Certifications
-    story.append(Paragraph("CERTIFICATIONS", section_head_style))
+    # 7. Certifications
+    story.append(Paragraph("CERTIFICATIONS &amp; ACCREDITATIONS", section_head_style))
+    story.append(Paragraph("&bull; <b>ServiceNow Certified Application Developer (CAD)</b> &ndash; Scoped app development, scripting, Flow Designer, REST APIs.", bullet_style))
+    story.append(Paragraph("&bull; <b>ServiceNow Certified System Administrator (CSA)</b> &ndash; Platform administration, user/role management, service catalog, CMDB.", bullet_style))
     story.append(Paragraph("&bull; <b>NPTEL:</b> Database Management Systems (DBMS) &ndash; Relational modeling, normalization, indexing, and SQL optimization.", bullet_style))
-    story.append(Paragraph("&bull; <b>HCL (GUVI):</b> JavaScript Programming &ndash; Modern ES6+, DOM manipulation, asynchronous architecture, and REST API integration.", bullet_style))
+    story.append(Paragraph("&bull; <b>HCL (GUVI):</b> Modern JavaScript Programming &ndash; ES6+, asynchronous architecture, DOM manipulation, and REST APIs.", bullet_style))
+    story.append(HRFlowable(width="100%", thickness=0.4, color=divider_gray, spaceBefore=1.5, spaceAfter=2))
+
+    # 8. Education
+    story.append(Paragraph("EDUCATION", section_head_style))
+    story.append(Paragraph("<b>B.E. Computer Science &amp; Engineering (Artificial Intelligence)</b> &mdash; Sathyabama Institute of Science &amp; Technology, Chennai", item_title_style))
+    story.append(Paragraph("<i>2023 &ndash; 2027 (Expected)</i> | <b>CGPA: 8.6 / 10.0</b> | Coursework: DSA, OOP, Machine Learning, Computer Vision, DBMS, OS, Networks", subtext_style))
+    story.append(Paragraph("<b>Higher Secondary Certificate (12th):</b> Aditya Vidyashram (2023) &ndash; <b>73%</b> | <b>Secondary (10th):</b> Aditya Vidyashram (2021) &ndash; <b>86%</b>", subtext_style))
 
     doc.build(story)
     print(f"Successfully generated resume at {output_path}")

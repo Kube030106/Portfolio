@@ -1,18 +1,19 @@
 export const PERSONAL_INFO = {
   name: "Kubendiran M",
-  role: "Computer Science (AI) Undergraduate",
-  tagline: "Building intelligent, real-world systems with AI, Computer Vision & Full-Stack Development",
+  role: "Computer Science (AI) Undergraduate & ServiceNow Certified (CAD & CSA)",
+  tagline: "ServiceNow Certified (CAD & CSA) • Building intelligent real-world systems with AI, Computer Vision & Enterprise Development",
   subtitles: [
+    "ServiceNow Certified Developer (CAD & CSA)",
     "AI Engineer",
     "Full-Stack Developer",
     "Computer Vision Enthusiast",
     "Machine Learning Explorer"
   ],
-  bio: "Passionate Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology (2023–2027) with a CGPA of 8.6/10. I specialize in architecting intelligent full-stack applications, robust biometric computer vision systems, and edge IoT solutions that bridge the gap between artificial intelligence and real-world utility.",
+  bio: "Passionate Computer Science (Artificial Intelligence) undergraduate at Sathyabama Institute of Science & Technology (2023–2027) with a CGPA of 8.6/10 and ServiceNow Certified Application Developer (CAD) & System Administrator (CSA). I specialize in enterprise platform workflows, full-stack applications, robust biometric computer vision systems, and edge IoT solutions that bridge the gap between intelligent automation and real-world utility.",
   email: "kuben3456@gmail.com",
   phone: "+91-9344715210",
   location: "Chennai, Tamil Nadu, India",
-  status: "Available for Software Development & AI Roles",
+  status: "Available for Software Development & ServiceNow Roles",
   github: "https://github.com/Kube030106",
   linkedin: "https://linkedin.com/in/m-kubendiran-2546702b5",
   resumeUrl: "/resume.pdf",
@@ -20,7 +21,7 @@ export const PERSONAL_INFO = {
     { label: "Academic CGPA", value: "8.6 / 10", description: "Sathyabama Institute of Tech" },
     { label: "Core Projects", value: "5+", description: "AI, Full-Stack & IoT Systems" },
     { label: "Industry Experience", value: "1", description: "Software Dev Internship" },
-    { label: "Certifications", value: "2", description: "NPTEL & HCL GUVI Verified" }
+    { label: "Certifications", value: "4", description: "ServiceNow CAD & CSA, NPTEL, HCL" }
   ],
   softSkills: [
     { name: "Problem Solving", icon: "Brain", desc: "Algorithmic breakdown and systematic debugging" },
@@ -93,6 +94,10 @@ export const SKILL_CATEGORIES = [
     name: "All Skills"
   },
   {
+    id: "servicenow",
+    name: "ServiceNow Platform"
+  },
+  {
     id: "languages",
     name: "Programming Languages"
   },
@@ -115,6 +120,11 @@ export const SKILL_CATEGORIES = [
 ];
 
 export const SKILLS = [
+  // ServiceNow Platform
+  { name: "ServiceNow CAD (App Dev)", category: "servicenow", level: 94, icon: "Layers", popular: true, tag: "Certified / Scoped Apps" },
+  { name: "ServiceNow CSA (Sys Admin)", category: "servicenow", level: 92, icon: "Server", popular: true, tag: "Certified / Platform Admin" },
+  { name: "Flow Designer & Scripting", category: "servicenow", level: 90, icon: "Workflow", popular: true, tag: "Business Rules & Script Includes" },
+
   // Languages
   { name: "Python", category: "languages", level: 92, icon: "FileCode", popular: true, tag: "AI / Backend" },
   { name: "Java", category: "languages", level: 82, icon: "Coffee", popular: false, tag: "OOP / Systems" },
@@ -276,22 +286,66 @@ export const EXPERIENCE = [
 
 export const CERTIFICATIONS = [
   {
+    id: "servicenow-cad",
+    title: "ServiceNow Certified Application Developer (CAD)",
+    issuer: "ServiceNow",
+    category: "Enterprise Cloud & App Dev",
+    icon: "Layers",
+    badge: "Premier Industry Credential",
+    period: "Verified Credential",
+    featured: true,
+    highlight: true,
+    description: "Industry-standard certification validating advanced capabilities in architecting, designing, and developing enterprise scoped applications on the ServiceNow Now Platform. Demonstrates mastery of client and server scripting, Flow Designer automations, REST integrations, application scoping, and data schema architecture.",
+    skillsCovered: [
+      "Scoped Application Architecture",
+      "Client Scripts & UI Policies",
+      "Business Rules & Script Includes",
+      "Flow Designer & Automated Subflows",
+      "Scripted REST APIs & Integration",
+      "UI Actions & Security Rules (ACLs)"
+    ]
+  },
+  {
+    id: "servicenow-csa",
+    title: "ServiceNow Certified System Administrator (CSA)",
+    issuer: "ServiceNow",
+    category: "Cloud Platform Administration",
+    icon: "Server",
+    badge: "Core Platform Certified",
+    period: "Verified Credential",
+    featured: true,
+    highlight: true,
+    description: "Globally accredited platform administration credential verifying comprehensive skills in configuring, managing, and governing the ServiceNow platform. Covers user/role governance (RBAC), Service Catalog design, CMDB maintenance, workflow orchestration, platform UI customizations, and automated SLA tracking.",
+    skillsCovered: [
+      "Platform & UI Configuration",
+      "User & Role Administration (RBAC)",
+      "Service Catalog & Request Fulfillment",
+      "CMDB & Configuration Management",
+      "Workflow & Process Automation",
+      "System Auditing & Performance Health"
+    ]
+  },
+  {
+    id: "nptel-dbms",
     title: "Database Management Systems (DBMS)",
     issuer: "NPTEL (National Programme on Technology Enhanced Learning)",
     category: "Computer Science Core",
     icon: "Database",
     badge: "Elite Certification",
     period: "Verified Credential",
+    featured: false,
     description: "Comprehensive certification covering relational data models, ER diagrams, advanced SQL queries, normal forms (1NF–BCNF), concurrency control, transaction isolation, and B+ tree indexing.",
     skillsCovered: ["Relational Database Theory", "SQL Query Optimization", "Normalization", "Transactions & ACID", "Indexing Techniques"]
   },
   {
+    id: "hcl-javascript",
     title: "JavaScript Programming",
     issuer: "HCL (GUVI Geek Network)",
     category: "Full-Stack Development",
     icon: "Code",
     badge: "Industry Certified",
     period: "Verified Credential",
+    featured: false,
     description: "Industry-aligned certification mastering modern JavaScript (ES6+), functional programming patterns, DOM event management, Promises, async/await, and RESTful API integrations.",
     skillsCovered: ["Modern ES6+ Syntax", "Asynchronous JavaScript", "DOM Manipulation", "Fetch & REST APIs", "Event Loop Mechanics"]
   }
